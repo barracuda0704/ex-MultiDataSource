@@ -6,26 +6,26 @@
 	<select id="retrieveEmpList" parameterType="empVO" resultType="empVO">
 	    <![CDATA[
 	        SELECT
-	               EMP.EMPNO,
-	               EMP.EMPNM,
-	               EMP.BIRTHDATE,
-	               EMP.TELEPHONE,
-	               EMP.ADDRESS
-	          FROM EMPLOYEE EMP
+	               EMPLOYEE.EMPNO,
+	               EMPLOYEE.EMPNM,
+	               EMPLOYEE.BIRTHDATE,
+	               EMPLOYEE.TELEPHONE,
+	               EMPLOYEE.ADDRESS
+	          FROM EMPLOYEE 
 	          WHERE 1=1
 	    ]]>
 		    <if test="searchKeyword != null">
 		        <choose>
 		            <when test="searchCondition == 1">
-		                AND EMP.EMPNO LIKE '%'|| #{searchKeyword} ||'%'
+		                AND EMPLOYEE.EMPNO LIKE '%'|| #{searchKeyword} ||'%'
 		            </when>
 		            <otherwise>
-		               AND EMP.EMPNM LIKE '%'|| #{searchKeyword} ||'%'
+		               AND EMPLOYEE.EMPNM LIKE '%'|| #{searchKeyword} ||'%'
 		            </otherwise>
 		        </choose>
 			</if>
 		<![CDATA[		
-			ORDER BY EMP.EMPNO DESC
+			ORDER BY EMPLOYEE.EMPNO DESC
 			LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
 		]]>
 	</select>
@@ -33,29 +33,29 @@
 	<select id="retrieveEmp" parameterType="empVO" resultType="empVO">
 	    <![CDATA[
 	        SELECT
-	               EMP.EMPNO,
-	               EMP.EMPNM,
-	               EMP.BIRTHDATE,
-	               EMP.TELEPHONE,
-	               EMP.ADDRESS
-	         FROM EMPLOYEE EMP
-		     WHERE EMP.EMPNO = #{empNo}
+	               EMPLOYEE.EMPNO,
+	               EMPLOYEE.EMPNM,
+	               EMPLOYEE.BIRTHDATE,
+	               EMPLOYEE.TELEPHONE,
+	               EMPLOYEE.ADDRESS
+	         FROM EMPLOYEE
+		     WHERE EMPLOYEE.EMPNO = #{empNo}
 		]]>
 	</select>
 	
 	<select id="retrieveEmpListTotCnt" parameterType="searchVO" resultType="int">
 	    <![CDATA[
 	        SELECT COUNT(*)
-	         FROM EMPLOYEE EMP
+	         FROM EMPLOYEE
 	         WHERE 1=1
 		]]>
 		 <if test="searchKeyword != null">
 	        <choose>
 	            <when test="searchCondition == 1">
-	                AND EMP.EMPNO LIKE '%'|| #{searchKeyword} ||'%'
+	                AND EMPLOYEE.EMPNO LIKE '%'|| #{searchKeyword} ||'%'
 	            </when>
 	            <otherwise>
-	               AND EMP.EMPNM LIKE '%'|| #{searchKeyword} ||'%'
+	               AND EMPLOYEE.EMPNM LIKE '%'|| #{searchKeyword} ||'%'
 	            </otherwise>
 	        </choose>
 		</if>
@@ -63,12 +63,12 @@
 
 	<update id="updateEmp" parameterType="empVO">
 		<![CDATA[
-	        UPDATE EMPLOYEE EMP
-	        SET EMP.EMPNM = #{empNm},
-	              	EMP.BIRTHDATE = #{birthdate},
-	               	EMP.TELEPHONE = #{telephone},
-	               	EMP.ADDRESS = #{address}
-		     WHERE EMP.EMPNO = #{empNo}
+	        UPDATE EMPLOYEE
+	        SET EMPLOYEE.EMPNM = #{empNm},
+	              	EMPLOYEE.BIRTHDATE = #{birthdate},
+	               	EMPLOYEE.TELEPHONE = #{telephone},
+	               	EMPLOYEE.ADDRESS = #{address}
+		     WHERE EMPLOYEE.EMPNO = #{empNo}
 		]]>
 	</update>
 
@@ -81,8 +81,8 @@
 
 	<delete id="deleteEmp" parameterType="empVO">
 		<![CDATA[
-			DELETE FROM EMPLOYEE EMP
-			 WHERE EMP.EMPNO = #{empNo}
+			DELETE FROM EMPLOYEE
+			 WHERE EMPLOYEE.EMPNO = #{empNo}
 		]]>
 	</delete>
 
