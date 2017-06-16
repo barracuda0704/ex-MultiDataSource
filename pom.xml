@@ -3,10 +3,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>egovframework</groupId>
-	<artifactId>ex-MultiDataSource</artifactId>
+	<artifactId>AAA</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>ex-MultiDataSource</name>
+	<name>ROOT</name>
 	<url>http://maven.apache.org</url>
 
 
