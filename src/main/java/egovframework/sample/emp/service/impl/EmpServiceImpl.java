@@ -81,8 +81,6 @@ public class EmpServiceImpl extends EgovAbstractServiceImpl implements EmpServic
 	 * @throws Exception
 	 */
 	public void updateEmp(EmpVO empVO) throws Exception {
-		System.out.println("====================================================================================");
-		System.out.println("11수정");
 		empMapper.updateEmp(empVO);
 	}
 
@@ -94,8 +92,7 @@ public class EmpServiceImpl extends EgovAbstractServiceImpl implements EmpServic
 	 * @throws Exception
 	 */
 	public void insertEmp(EmpVO empVO) throws Exception {
-			System.out.println("====================================================================================");
-		System.out.println("22입력");
+
 		// 사원번호(empNo) 자동생성
 		String empNo = egovIdGnrService.getNextStringId();
 		empVO.setEmpNo(empNo);
