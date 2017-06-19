@@ -17,10 +17,10 @@
 		    <if test="searchKeyword != null">
 		        <choose>
 		            <when test="searchCondition == 1">
-		                AND EMPLOYEE.EMPNO LIKE #{searchKeyword}
+		                AND EMPLOYEE.EMPNO LIKE '%'|| #{searchKeyword} ||'%'
 		            </when>
 		            <otherwise>
-		               AND EMPLOYEE.EMPNM LIKE #{searchKeyword}
+		               AND EMPLOYEE.EMPNM LIKE '%'|| #{searchKeyword} ||'%'
 		            </otherwise>
 		        </choose>
 			</if>
@@ -52,10 +52,10 @@
 		 <if test="searchKeyword != null">
 	        <choose>
 	            <when test="searchCondition == 1">
-	                AND EMPLOYEE.EMPNO LIKE #{searchKeyword}
+	                AND EMPLOYEE.EMPNO LIKE '%'|| #{searchKeyword} ||'%'
 	            </when>
 	            <otherwise>
-	               AND EMPLOYEE.EMPNM LIKE #{searchKeyword}
+	               AND EMPLOYEE.EMPNM LIKE '%'|| #{searchKeyword} ||'%'
 	            </otherwise>
 	        </choose>
 		</if>

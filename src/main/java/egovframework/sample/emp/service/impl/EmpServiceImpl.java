@@ -96,22 +96,6 @@ public class EmpServiceImpl extends EgovAbstractServiceImpl implements EmpServic
 		// 사원번호(empNo) 자동생성
 		String empNo = egovIdGnrService.getNextStringId();
 		empVO.setEmpNo(empNo);
-		System.out.println("===================================================================");
-		System.out.println("empVO.getEmpNo() - " + empVO.getEmpNo());
-		System.out.println("empVO.getEmpNm() - " + empVO.getEmpNm());
-		System.out.println("empVO.getBirthdate() - " + empVO.getBirthdate());
-		System.out.println("empVO.getTelephone() - " + empVO.getTelephone());
-		System.out.println("empVO.getAddress() - " + empVO.getAddress());
-		System.out.println("===================================================================");
-		empVO.setEmpNm(new String(empVO.getEmpNm().getBytes("UTF-8")));
-		empVO.setAddress(new String(empVO.getAddress().getBytes("UTF-8")));
-		System.out.println("===================================================================");
-		System.out.println("empVO.getEmpNo() - " + empVO.getEmpNo());
-		System.out.println("empVO.getEmpNm() - " + empVO.getEmpNm());
-		System.out.println("empVO.getBirthdate() - " + empVO.getBirthdate());
-		System.out.println("empVO.getTelephone() - " + empVO.getTelephone());
-		System.out.println("empVO.getAddress() - " + empVO.getAddress());
-		System.out.println("===================================================================");
 		empMapper.insertEmp(empVO);
 	}
 
