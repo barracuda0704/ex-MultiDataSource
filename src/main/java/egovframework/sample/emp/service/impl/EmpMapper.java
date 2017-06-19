@@ -92,6 +92,7 @@ public class EmpMapper extends EgovAbstractMapper {
 	 * @throws Exception
 	 */
 	public void insertEmp(EmpVO empVO) throws Exception {
+		System.out.println("====================================================================================");
 		insert("EmpMapper.insertEmp", empVO);
 	}
 
