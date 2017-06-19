@@ -16,10 +16,10 @@
 	    <if test="searchKeyword != null">
 	        <choose>
 	            <when test="searchCondition == 1">
-	                 AND DEPT.DEPTNO LIKE '%'|| #{searchKeyword} ||'%'
+	                 AND DEPT.DEPTNO LIKE #{searchKeyword}
 	            </when>
 	            <otherwise>
-	                AND DEPT.DEPTNM LIKE '%'|| #{searchKeyword} ||'%'
+	                AND DEPT.DEPTNM LIKE #{searchKeyword}
 	            </otherwise>
 	        </choose>
 		</if>
@@ -50,10 +50,10 @@
 	    <if test="searchKeyword != null">
 	        <choose>
 	            <when test="searchCondition == 1">
-	                 AND DEPT.DEPTNO LIKE '%'|| #{searchKeyword} ||'%'
+	                 AND DEPT.DEPTNO LIKE #{searchKeyword}
 	            </when>
 	            <otherwise>
-	                AND DEPT.DEPTNM LIKE '%'|| #{searchKeyword} ||'%'
+	                AND DEPT.DEPTNM LIKE #{searchKeyword}
 	            </otherwise>
 	        </choose>
 		</if>
