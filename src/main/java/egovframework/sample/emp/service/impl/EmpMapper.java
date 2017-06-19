@@ -81,6 +81,15 @@ public class EmpMapper extends EgovAbstractMapper {
 	 * @throws Exception
 	 */
 	public void updateEmp(EmpVO empVO) throws Exception {
+		System.out.println("=======================================================");
+		System.out.println("empVO.getEmpNo() - " + empVO.getEmpNo());
+		System.out.println("empVO.getEmpNm() - " + empVO.getEmpNm());
+		System.out.println("empVO.getBirthdate() - " + empVO.getBirthdate());
+		System.out.println("empVO.getTelephone() - " + empVO.getTelephone());
+		System.out.println("empVO.getAddress() - " + empVO.getAddress());
+		System.out.println("=======================================================");
+
+		
 		update("EmpMapper.updateEmp", empVO);
 	}
 
