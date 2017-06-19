@@ -81,6 +81,8 @@ public class EmpMapper extends EgovAbstractMapper {
 	 * @throws Exception
 	 */
 	public void updateEmp(EmpVO empVO) throws Exception {
+				System.out.println("====================================================================================");
+		System.out.println("33수정");
 		update("EmpMapper.updateEmp", empVO);
 	}
 
@@ -93,6 +95,7 @@ public class EmpMapper extends EgovAbstractMapper {
 	 */
 	public void insertEmp(EmpVO empVO) throws Exception {
 		System.out.println("====================================================================================");
+		System.out.println("44입력");
 		insert("EmpMapper.insertEmp", empVO);
 	}
 
